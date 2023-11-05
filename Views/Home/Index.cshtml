@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+} <div class="text-center">
+    <h1 class="display-4">Random passcode #@Context.Session.GetInt32("counter")</h1>
+    <input type="text" value=@Context.Session.GetString("Passcode")>
+    <form asp-action="Generate" asp-controller="Home" method="post">
+        <input type="submit" value="Generate">
+    </form>
+</div>
